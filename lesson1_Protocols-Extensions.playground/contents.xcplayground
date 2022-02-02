@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1-5. Ответы на вопросы'/>
+        <page name='6a. Игра в шахматы'/>
+        <page name='6b. Компьютерная игра'/>
+        <page name='7. Расширения разных типов'/>
+        <page name='8. Protocol-Oriented Programming'/>
+    </pages>
+</playground>
