@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='4. Дженерики'/>
+        <page name='5. Ассоц. типы vs дженерики'/>
+        <page name='6a-c. Функции Eaqatable+Comparable'/>
+        <page name='6d. Дженерик функция'/>
+        <page name='7. Расширение Array'/>
+        <page name='8. Операторы'/>
+        <page name='9. Аниматор'/>
+    </pages>
+</playground>
