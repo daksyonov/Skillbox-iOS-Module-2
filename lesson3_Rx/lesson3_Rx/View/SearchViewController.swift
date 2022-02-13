@@ -6,14 +6,39 @@
 //
 
 import UIKit
+import RxSwift
+import SwiftyBeaver
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
-	@IBOutlet weak var searchTextField: UITextField!
-	@IBOutlet weak var outputTextField: UITextView!
-	@IBOutlet weak var resetButton: UIButton!
+	@IBOutlet private weak var searchTextField: UITextField!
+	@IBOutlet private weak var outputTextView: UITextView!
+	@IBOutlet private weak var resetButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		searchTextField.delegate = self
 	}
+
+	@IBAction private func reset(_ sender: Any) {
+		searchTextField.text?.removeAll()
+		outputTextView.text.removeAll()
+	}
+
+	private func performSearch(with delay: Double = 0.5) {
+
+		updateTextView()
+	}
+
+	private func updateTextView() {
+
+	}
+}
+
+extension SearchViewController: UITextFieldDelegate {
+
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		performSearch()
+	}
+
 }

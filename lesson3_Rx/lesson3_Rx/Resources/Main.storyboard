@@ -78,6 +78,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQf-tC-Yqh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Console Output:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-5q-jz8">
                                 <rect key="frame" x="79" y="450" width="125" height="21"/>
@@ -110,7 +113,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="5b" selectedImage="2.circle" catalog="system" id="Mhs-Xc-0DO"/>
                     <connections>
-                        <outlet property="outputTextField" destination="Lvd-7z-mmQ" id="lef-oW-f8y"/>
+                        <outlet property="outputTextView" destination="Lvd-7z-mmQ" id="lef-oW-f8y"/>
                         <outlet property="resetButton" destination="JNG-J3-Zv1" id="xhN-2k-66q"/>
                         <outlet property="searchTextField" destination="4M8-Io-pOu" id="SZ6-P5-koA"/>
                     </connections>
@@ -216,6 +219,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="login:" destination="Dh0-dl-bM8" eventType="touchUpInside" id="M5e-8v-0IQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op7-dp-Jcf">
                                         <rect key="frame" x="0.0" y="85" width="300" height="64"/>
@@ -235,6 +241,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="reset:" destination="Dh0-dl-bM8" eventType="touchUpInside" id="755-lN-2c0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -275,7 +284,7 @@
         <!--Names Table View-->
         <scene sceneID="v2w-u7-MqO">
             <objects>
-                <viewController title="Names Table View" interfaceStyle="dark" id="Kxe-qA-1Wl" customClass="NamesViewController" sceneMemberID="viewController">
+                <viewController title="Names Table View" interfaceStyle="dark" id="Kxe-qA-1Wl" customClass="NamesViewController" customModule="lesson3_Rx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uwf-sm-bNZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,6 +340,11 @@
                         </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addNameButton" destination="fQB-BY-sQo" id="clD-Z6-bzg"/>
+                        <outlet property="deleteNameButton" destination="cA3-0s-wCl" id="t6h-SW-2rM"/>
+                        <outlet property="namesTableView" destination="Vd8-yw-PCf" id="hhw-k0-f1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNz-KV-QQP" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,6 +403,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="launch:" destination="ljR-VH-5WW" eventType="touchUpInside" id="IvC-fx-gDC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-TW-Nj1">
                                         <rect key="frame" x="0.0" y="85" width="300" height="64"/>
@@ -408,6 +425,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="launch:" destination="ljR-VH-5WW" eventType="touchUpInside" id="3SS-gD-F3A"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u11-Y6-xDU">
                                         <rect key="frame" x="0.0" y="170" width="300" height="64"/>
@@ -427,6 +447,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="reset:" destination="ljR-VH-5WW" eventType="touchUpInside" id="56l-Ny-JZy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -472,6 +495,7 @@
                         <outlet property="launchButton" destination="QpK-eC-3u5" id="mdp-ol-PaL"/>
                         <outlet property="resetButton" destination="u11-Y6-xDU" id="vU9-pN-cDT"/>
                         <outlet property="rocketImageTopConstraint" destination="SrC-TN-ro2" id="kxQ-eu-OBj"/>
+                        <outlet property="rocketImageView" destination="UKg-WF-UXu" id="7rD-ZZ-yYk"/>
                         <outlet property="statusLabel" destination="Z1c-Lz-RHb" id="8n0-LM-GhY"/>
                     </connections>
                 </viewController>
@@ -528,6 +552,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="count:" destination="aSd-kp-NqD" eventType="touchUpInside" id="8Yk-Tv-pWK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-Hq-evh">
                                         <rect key="frame" x="0.0" y="85" width="300" height="64"/>
@@ -547,6 +574,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="reset:" destination="aSd-kp-NqD" eventType="touchUpInside" id="zqo-5d-Db0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -7,24 +7,48 @@
 
 import UIKit
 
-class NamesViewController: UITableViewController {
+final class NamesViewController: UIViewController {
 
 	@IBOutlet weak var addNameButton: UIBarButtonItem!
 	@IBOutlet weak var deleteNameButton: UIBarButtonItem!
+	@IBOutlet weak var namesTableView: UITableView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		namesTableView.delegate = self
+		namesTableView.dataSource = self
+		namesTableView.register(
+			UITableViewCell.self,
+			forCellReuseIdentifier: "cell"
+		)
 	}
 
-	// MARK: - Table view data source
+}
 
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 0
+extension NamesViewController: UITableViewDataSource {
+
+	func numberOfSections(in tableView: UITableView) -> Int {
+		1
 	}
 
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 0
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		10
 	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = UITableViewCell.init(
+			style: .subtitle,
+			reuseIdentifier: "cell"
+		)
+
+		cell.textLabel?.text = "aga"
+		cell.detailTextLabel?.text = "fasfd"
+
+		return cell
+	}
+}
+
+extension NamesViewController: UITableViewDelegate {
+
 
 }

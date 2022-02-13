@@ -7,13 +7,25 @@
 
 import UIKit
 
-class CounterViewController: UIViewController {
+final class CounterViewController: UIViewController {
 
-	@IBOutlet weak var counterLabel: UILabel!
-	@IBOutlet weak var countButton: UIButton!
-	@IBOutlet weak var resetButton: UIButton!
+	@IBOutlet private weak var counterLabel: UILabel!
+	@IBOutlet private weak var countButton: UIButton!
+	@IBOutlet private weak var resetButton: UIButton!
+
+	private var count: Int = 0
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+
+	@IBAction private func count(_ sender: Any) {
+		count += 1
+		counterLabel.text = "\(count)"
+	}
+
+	@IBAction private func reset(_ sender: Any) {
+		count = 0
+		counterLabel.text?.removeAll()
 	}
 }
