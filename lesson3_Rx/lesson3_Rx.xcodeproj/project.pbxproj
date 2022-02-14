@@ -23,6 +23,7 @@
 		3FB21EB627B98B600060472B /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB21EB527B98B600060472B /* CounterViewController.swift */; };
 		3FB21EB827B98B6C0060472B /* RocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB21EB727B98B6C0060472B /* RocketViewController.swift */; };
 		3FB21EBD27B98DC50060472B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB21EBC27B98DC50060472B /* TabBarController.swift */; };
+		3FFB6D6627BA2E0D008F6880 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB6D6527BA2E08008F6880 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,7 @@
 		3FB21EB527B98B600060472B /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		3FB21EB727B98B6C0060472B /* RocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewController.swift; sourceTree = "<group>"; };
 		3FB21EBC27B98DC50060472B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3FFB6D6527BA2E08008F6880 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		3F0748AF27B97729001BBADA = {
 			isa = PBXGroup;
 			children = (
+				3FFB6D6527BA2E08008F6880 /* README.md */,
 				3F0748BA27B97729001BBADA /* lesson3_Rx */,
 				3F0748B927B97729001BBADA /* Products */,
 			);
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FFB6D6627BA2E0D008F6880 /* README.md in Resources */,
 				3F0748D027B9773F001BBADA /* Main.storyboard in Resources */,
 				3F0748C827B9772A001BBADA /* LaunchScreen.storyboard in Resources */,
 				3F0748C527B9772A001BBADA /* Assets.xcassets in Resources */,
