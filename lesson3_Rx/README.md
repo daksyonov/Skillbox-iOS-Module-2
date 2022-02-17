@@ -15,6 +15,7 @@
     - [Спин-офф: Push- & Pull-based реактивное программирование](#спин-офф-push---pull-based-реактивное-программирование)
       - [Pull](#pull)
       - [Push](#push)
+      - [Push + Pull](#push--pull)
 
 ## Что такое
 
@@ -108,7 +109,18 @@ Rx последовательности описаны с помощью push [?
 
 #### Push
 
+Система же, основанная на push принципе как бы собирает события и после "рассылает" их по
+дата-стримам. Здесь дата и апдейты летят к обзерверу от источника. Обзервер здесь
+только реагирует на изменения, то есть не блокируется. Это асинхронно (тут бы доказать
+но времени нет), поэтому более выгодно для UI-операций, когда важно, чтоб все не
+фризило.
 
+#### Push + Pull 
+
+https://subscription.packtpub.com/book/application_development/9781788629775/1/ch01lvl1sec14/pull-versus-push-based-reactive-programming
+
+На самом деле они дополняют друг-друга, т.к. если на одной стороне кто-то пуллит,
+то технически на другой стороне кто-то будет пушить.
 
 [1]: https://docs.rxswift.org/protocols/observabletype#/s:7RxSwift14ObservableTypeP9subscribeyAA10Disposable_pqd__AA08ObserverD0Rd__7ElementQyd__AGRtzlF
 [2]: https://developer.apple.com/documentation/swift/sequence/2885155-makeiterator
