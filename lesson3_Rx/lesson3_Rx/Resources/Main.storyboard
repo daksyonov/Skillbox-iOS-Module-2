@@ -219,9 +219,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="login:" destination="Dh0-dl-bM8" eventType="touchUpInside" id="M5e-8v-0IQ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op7-dp-Jcf">
                                         <rect key="frame" x="0.0" y="85" width="300" height="64"/>
@@ -241,9 +238,6 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="reset:" destination="Dh0-dl-bM8" eventType="touchUpInside" id="755-lN-2c0"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -271,7 +265,7 @@
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="loginButton" destination="Zvo-4m-gwS" id="kti-qB-Oku"/>
+                        <outlet property="loginButton" destination="Zvo-4m-gwS" id="mg1-zJ-hOL"/>
                         <outlet property="loginTextField" destination="ObA-d6-04r" id="iJi-d8-YmS"/>
                         <outlet property="passwordTextField" destination="sOc-io-BoD" id="o2U-l1-bT3"/>
                         <outlet property="resetButton" destination="Op7-dp-Jcf" id="Nlu-Xe-2qp"/>

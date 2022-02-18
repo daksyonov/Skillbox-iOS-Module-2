@@ -7,12 +7,14 @@
 
 import UIKit
 import RxSwift
-import SwiftyBeaver
+import RxCocoa
 
 final class LoginViewController: UIViewController {
 
 	private var mockLogin: String = ""
 	private var mockPassword: String = ""
+
+	private var disposeBag = DisposeBag()
 
 	@IBOutlet private weak var loginTextField: UITextField!
 	@IBOutlet private weak var passwordTextField: UITextField!
@@ -21,6 +23,7 @@ final class LoginViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		setObservables()
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -29,7 +32,7 @@ final class LoginViewController: UIViewController {
 	}
 
 
-	@IBAction private func login(_ sender: Any) {
+	private func login() {
 		guard !mockLogin.isEmpty,
 			  !mockPassword.isEmpty
 		else {
@@ -67,7 +70,7 @@ final class LoginViewController: UIViewController {
 		}
 	}
 
-	@IBAction private func reset(_ sender: Any) {
+	private func reset() {
 		mockLogin.removeAll()
 		mockPassword.removeAll()
 		loginTextField.text?.removeAll()
@@ -83,7 +86,7 @@ final class LoginViewController: UIViewController {
 		let resetAction = UIAlertAction(
 			title: "Reset",
 			style: .destructive,
-			handler: reset(_:)
+			handler: { _ in self.reset() }
 		)
 		let retryAction = UIAlertAction(
 			title: "Retry",
@@ -115,6 +118,7 @@ final class LoginViewController: UIViewController {
 				guard let login = alert.textFields?.first?.text,
 					  let pwd = alert.textFields?.last?.text
 				else {
+					self.showCredentialsSetter()
 					return
 				}
 
@@ -133,6 +137,36 @@ final class LoginViewController: UIViewController {
 
 		present(alert, animated: true)
 	}
-
 }
 
+// MARK: - Rx
+
+extension LoginViewController {
+
+	private func setObservables() {
+		loginButton
+			.rx
+			.tap
+			.observe(on: MainScheduler.instance)
+			.subscribe(
+				onNext: { self.login() }
+			)
+			.disposed(by: self.disposeBag)
+
+		resetButton
+			.rx
+			.tap
+			.observe(on: MainScheduler.instance)
+			.subscribe(
+				onNext: { self.reset() }
+			)
+			.disposed(by: self.disposeBag)
+
+		loginTextField
+			.rx
+			.text
+			.observe(on: MainScheduler.instance)
+			.subscribe(<#T##on: (Event<String?>) -> Void##(Event<String?>) -> Void#>)
+			.disposed(by: self.disposeBag)re
+	}
+}
