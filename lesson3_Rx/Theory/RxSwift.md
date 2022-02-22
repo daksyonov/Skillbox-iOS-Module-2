@@ -139,6 +139,8 @@ Rx последовательности описаны с помощью push и
 применимо в случаях, когда последовательность не завершается вовсе, или же сама по себе не может
 определить, в какое время ей завершаться.
 
+## Источники
+
 [1]: https://docs.rxswift.org/protocols/observabletype#/s:7RxSwift14ObservableTypeP9subscribeyAA10Disposable_pqd__AA08ObserverD0Rd__7ElementQyd__AGRtzlF
 [2]: https://developer.apple.com/documentation/swift/sequence/2885155-makeiterator
 [3]: https://refactoring.guru/ru/design-patterns/iterator

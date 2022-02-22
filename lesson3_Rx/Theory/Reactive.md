@@ -140,3 +140,4 @@ struct LoginPage: WebPage {
 <--! Просто ссылки -->
 
 [5]: https://en.wikipedia.org/wiki/Reactive_programming
+[6]: https://github.com/ReactiveX/RxSwift/blob/main/Documentation
