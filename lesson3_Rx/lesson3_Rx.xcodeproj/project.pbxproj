@@ -48,6 +48,9 @@
 		3F0748C727B9772A001BBADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0748C927B9772A001BBADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F0748CF27B9773F001BBADA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3F0BDE5427C3660500B05FA8 /* Functional.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Functional.md; sourceTree = "<group>"; };
+		3F0BDE5527C4B5F800B05FA8 /* Declarative.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Declarative.md; sourceTree = "<group>"; };
+		3F0BDE5627C4B60700B05FA8 /* DataStream.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DataStream.md; sourceTree = "<group>"; };
 		3F22B34F27B9B2070081FD30 /* AnimatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableProtocol.swift; sourceTree = "<group>"; };
 		3F22B35127B9B68D0081FD30 /* UIViewTransformationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTransformationProtocol.swift; sourceTree = "<group>"; };
 		3F75358227C0E47E00492631 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -106,6 +109,9 @@
 		3F75358327C0E48400492631 /* Theory */ = {
 			isa = PBXGroup;
 			children = (
+				3F0BDE5627C4B60700B05FA8 /* DataStream.md */,
+				3F0BDE5527C4B5F800B05FA8 /* Declarative.md */,
+				3F0BDE5427C3660500B05FA8 /* Functional.md */,
 				3FDF142C27C0EA3C0073DAFB /* Reactive.md */,
 				3FFB6D6527BA2E08008F6880 /* RxSwift.md */,
 			);
