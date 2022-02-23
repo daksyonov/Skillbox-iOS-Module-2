@@ -15,7 +15,6 @@
 		3F0BDE5B27C577A400B05FA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BDE5A27C577A400B05FA8 /* LoginViewController.swift */; };
 		3F22B35027B9B2070081FD30 /* AnimatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B34F27B9B2070081FD30 /* AnimatableProtocol.swift */; };
 		3F22B35227B9B68D0081FD30 /* UIViewTransformationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B35127B9B68D0081FD30 /* UIViewTransformationProtocol.swift */; };
-		3F521E9A27B97DF600C678EC /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 3F521E9927B97DF600C678EC /* SwiftyBeaver */; };
 		3FB21EAE27B97EAB0060472B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3FB21EAD27B97EAB0060472B /* RxCocoa */; };
 		3FB21EB027B97EAB0060472B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3FB21EAF27B97EAB0060472B /* RxSwift */; };
 		3FB21EB227B98B2D0060472B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB21EB127B98B2D0060472B /* SearchViewController.swift */; };
@@ -69,7 +68,6 @@
 			files = (
 				3FB21EB027B97EAB0060472B /* RxSwift in Frameworks */,
 				3FB21EAE27B97EAB0060472B /* RxCocoa in Frameworks */,
-				3F521E9A27B97DF600C678EC /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +166,6 @@
 			);
 			name = lesson3_Rx;
 			packageProductDependencies = (
-				3F521E9927B97DF600C678EC /* SwiftyBeaver */,
 				3FB21EAD27B97EAB0060472B /* RxCocoa */,
 				3FB21EAF27B97EAB0060472B /* RxSwift */,
 			);
@@ -202,7 +199,6 @@
 			);
 			mainGroup = 3F0748AF27B97729001BBADA;
 			packageReferences = (
-				3F521E9827B97DF600C678EC /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 3F0748B927B97729001BBADA /* Products */;
@@ -461,14 +457,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3F521E9827B97DF600C678EC /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -480,11 +468,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3F521E9927B97DF600C678EC /* SwiftyBeaver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3F521E9827B97DF600C678EC /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
-			productName = SwiftyBeaver;
-		};
 		3FB21EAD27B97EAB0060472B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */;
