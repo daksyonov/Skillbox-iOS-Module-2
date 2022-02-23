@@ -11,9 +11,15 @@ import RxCocoa
 
 final class LoginViewController: UIViewController {
 
+	private typealias CredCount = (loginOk: Bool, pwdOk: Bool)
+
 	private var mockLogin: String = ""
 	private var mockPassword: String = ""
 
+	private var enteredLogin: String?
+	private var enteredPwd: String?
+
+	private var credStatus = BehaviorRelay<CredCount>(value: (false, false))
 	private var disposeBag = DisposeBag()
 
 	@IBOutlet private weak var loginTextField: UITextField!
@@ -24,6 +30,7 @@ final class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setObservables()
+		setupUI()
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +38,7 @@ final class LoginViewController: UIViewController {
 		showCredentialsSetter()
 	}
 
+	// MARK: Business Logic
 
 	private func login() {
 		guard !mockLogin.isEmpty,
@@ -43,18 +51,22 @@ final class LoginViewController: UIViewController {
 			return
 		}
 
-		guard let login = loginTextField.text,
-			  let pwd = passwordTextField.text
+		guard !(loginTextField.text?.isEmpty ?? true),
+			  !(passwordTextField.text?.isEmpty ?? true)
 		else {
-			showErrorAlert(
-				title: "Login data not found",
-				message: "Make sure all text fields are filled"
-			)
+			showErrorAlert(title: "Nothing was entered", message: "")
 			return
 		}
 
-		let loginStatus = login == mockLogin
-		let pwdStatus = pwd == mockPassword
+		let loginStatus = enteredLogin == mockLogin
+		let pwdStatus = enteredPwd == mockPassword
+
+		if (enteredPwd?.count ?? 0) < 6 {
+			showErrorAlert(
+				title: "Pwd is less than 6 symbols",
+				message: "Please reset via RESET button"
+			)
+		}
 
 		if !loginStatus {
 			showErrorAlert(
@@ -68,6 +80,10 @@ final class LoginViewController: UIViewController {
 				message: "Try again"
 			)
 		}
+
+		if loginStatus && pwdStatus {
+			showErrorAlert(title: "SUCCESS", message: "")
+		}
 	}
 
 	private func reset() {
@@ -75,7 +91,20 @@ final class LoginViewController: UIViewController {
 		mockPassword.removeAll()
 		loginTextField.text?.removeAll()
 		passwordTextField.text?.removeAll()
+		showCredentialsSetter()
 	}
+
+	// MARK: Utility
+
+	private func matchSixCount(_ input: String?) -> Bool {
+		guard let string = input
+		else {
+			return false
+		}
+		return string.count >= 6
+	}
+
+	// MARK: Alerts
 
 	private func showErrorAlert(title: String, message: String) {
 		let alert = UIAlertController(
@@ -126,16 +155,25 @@ final class LoginViewController: UIViewController {
 				self.mockPassword = pwd
 			}
 		)
-		let cancelAction = UIAlertAction(
-			title: "Cancel",
-			style: .cancel
-		)
 
-		[doneAction, cancelAction].forEach {
-			alert.addAction($0)
-		}
+		alert.addAction(doneAction)
 
 		present(alert, animated: true)
+	}
+
+	// MARK: Login Button
+
+	private func toggleLoginButton(on: Bool) {
+		UIView.animate(withDuration: 0.3) {
+			switch on {
+			case true:
+				self.loginButton.alpha = 1
+				self.loginButton.isUserInteractionEnabled = true
+			case false:
+				self.loginButton.alpha = 0.5
+				self.loginButton.isUserInteractionEnabled = false
+			}
+		}
 	}
 }
 
@@ -144,6 +182,9 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
 
 	private func setObservables() {
+
+		// Buttons
+
 		loginButton
 			.rx
 			.tap
@@ -162,11 +203,50 @@ extension LoginViewController {
 			)
 			.disposed(by: self.disposeBag)
 
+		// TextFields
+
 		loginTextField
 			.rx
 			.text
-			.observe(on: MainScheduler.instance)
-			.subscribe(<#T##on: (Event<String?>) -> Void##(Event<String?>) -> Void#>)
-			.disposed(by: self.disposeBag)re
+			.bind {
+				self.enteredLogin = $0
+				var value = self.credStatus.value
+				value.loginOk = self.matchSixCount($0)
+				self.credStatus.accept(value)
+			}
+			.disposed(by: self.disposeBag)
+
+		passwordTextField
+			.rx
+			.text
+			.bind {
+				self.enteredPwd = $0
+				var value = self.credStatus.value
+				value.pwdOk = self.matchSixCount($0)
+				self.credStatus.accept(value)
+			}
+			.disposed(by: self.disposeBag)
+
+		// Creds 6 count status
+
+		credStatus.subscribe { event in
+			let status = event.element
+
+			guard let status = status,
+				  status.loginOk && status.pwdOk
+			else {
+				self.toggleLoginButton(on: false)
+				return
+			}
+			self.toggleLoginButton(on: true)
+		}
+		.disposed(by: self.disposeBag)
+	}
+
+	func setupUI() {
+		loginTextField.textColor = .black
+		passwordTextField.textColor = .black
+
+		toggleLoginButton(on: false)
 	}
 }
