@@ -7,17 +7,22 @@
 
 import UIKit
 import RxSwift
-import SwiftyBeaver
+import RxCocoa
 
 final class SearchViewController: UIViewController {
 
 	@IBOutlet private weak var searchTextField: UITextField!
 	@IBOutlet private weak var outputTextView: UITextView!
 	@IBOutlet private weak var resetButton: UIButton!
+
+	private var disposeBag = DisposeBag()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		searchTextField.delegate = self
+		observeSearchField()
+
+		searchTextField.textColor = .black
+		searchTextField.placeholder = "Enter something here..."
 	}
 
 	@IBAction private func reset(_ sender: Any) {
@@ -25,20 +30,25 @@ final class SearchViewController: UIViewController {
 		outputTextView.text.removeAll()
 	}
 
-	private func performSearch(with delay: Double = 0.5) {
-
-		updateTextView()
+	private func observeSearchField() {
+		searchTextField
+			.rx
+			.controlEvent(.editingChanged)
+			.asObservable()
+			.throttle(.milliseconds(700), scheduler: MainScheduler.asyncInstance)
+			.subscribe(onNext: {
+				self.outputTextView.text = "Search for: \(self.searchTextField.text ?? "")"
+			})
+			.disposed(by: self.disposeBag)
 	}
 
-	private func updateTextView() {
-
+	private func setResetButton() {
+		resetButton
+			.rx
+			.tap
+			.subscribe(onNext: {
+				self.searchTextField.text?.removeAll()
+			})
+			.disposed(by: self.disposeBag)
 	}
-}
-
-extension SearchViewController: UITextFieldDelegate {
-
-	func textFieldDidEndEditing(_ textField: UITextField) {
-		performSearch()
-	}
-
 }
