@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F0748BC27B97729001BBADA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0748BB27B97729001BBADA /* AppDelegate.swift */; };
 		3F0748BE27B97729001BBADA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0748BD27B97729001BBADA /* SceneDelegate.swift */; };
-		3F0748C027B97729001BBADA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0748BF27B97729001BBADA /* LoginViewController.swift */; };
 		3F0748C527B9772A001BBADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0748C427B9772A001BBADA /* Assets.xcassets */; };
 		3F0748C827B9772A001BBADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0748C627B9772A001BBADA /* LaunchScreen.storyboard */; };
 		3F0748D027B9773F001BBADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0748CF27B9773F001BBADA /* Main.storyboard */; };
+		3F0BDE5B27C577A400B05FA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BDE5A27C577A400B05FA8 /* LoginViewController.swift */; };
 		3F22B35027B9B2070081FD30 /* AnimatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B34F27B9B2070081FD30 /* AnimatableProtocol.swift */; };
 		3F22B35227B9B68D0081FD30 /* UIViewTransformationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B35127B9B68D0081FD30 /* UIViewTransformationProtocol.swift */; };
 		3F521E9A27B97DF600C678EC /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 3F521E9927B97DF600C678EC /* SwiftyBeaver */; };
@@ -43,13 +43,13 @@
 		3F0748B827B97729001BBADA /* lesson3_Rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson3_Rx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0748BB27B97729001BBADA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F0748BD27B97729001BBADA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F0748BF27B97729001BBADA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F0748C427B9772A001BBADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F0748C727B9772A001BBADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0748C927B9772A001BBADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F0748CF27B9773F001BBADA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3F0BDE5427C3660500B05FA8 /* Functional.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Functional.md; sourceTree = "<group>"; };
 		3F0BDE5527C4B5F800B05FA8 /* Declarative.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Declarative.md; sourceTree = "<group>"; };
+		3F0BDE5A27C577A400B05FA8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F22B34F27B9B2070081FD30 /* AnimatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableProtocol.swift; sourceTree = "<group>"; };
 		3F22B35127B9B68D0081FD30 /* UIViewTransformationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTransformationProtocol.swift; sourceTree = "<group>"; };
 		3F75358227C0E47E00492631 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				3FB21EBC27B98DC50060472B /* TabBarController.swift */,
-				3F0748BF27B97729001BBADA /* LoginViewController.swift */,
+				3F0BDE5A27C577A400B05FA8 /* LoginViewController.swift */,
 				3FB21EB127B98B2D0060472B /* SearchViewController.swift */,
 				3FB21EB327B98B400060472B /* NamesViewController.swift */,
 				3FB21EB527B98B600060472B /* CounterViewController.swift */,
@@ -233,7 +233,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0748C027B97729001BBADA /* LoginViewController.swift in Sources */,
 				3FB21EBD27B98DC50060472B /* TabBarController.swift in Sources */,
 				3F0748BC27B97729001BBADA /* AppDelegate.swift in Sources */,
 				3FB21EB227B98B2D0060472B /* SearchViewController.swift in Sources */,
@@ -243,6 +242,7 @@
 				3FB21EB427B98B400060472B /* NamesViewController.swift in Sources */,
 				3F0748BE27B97729001BBADA /* SceneDelegate.swift in Sources */,
 				3F22B35227B9B68D0081FD30 /* UIViewTransformationProtocol.swift in Sources */,
+				3F0BDE5B27C577A400B05FA8 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wcgb.RWSwiftUI1.lesson3-Rx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Files/lesson3_Rx-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -431,7 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wcgb.RWSwiftUI1.lesson3-Rx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Files/lesson3_Rx-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
