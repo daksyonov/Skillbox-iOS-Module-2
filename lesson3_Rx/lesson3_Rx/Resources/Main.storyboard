@@ -316,31 +316,26 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uJb-P0-EVd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vd8-yw-PCf" firstAttribute="bottom" secondItem="uJb-P0-EVd" secondAttribute="bottom" id="1nk-M0-sll"/>
                             <constraint firstItem="Vd8-yw-PCf" firstAttribute="leading" secondItem="uJb-P0-EVd" secondAttribute="leading" id="8MY-xK-a09"/>
                             <constraint firstItem="Vd8-yw-PCf" firstAttribute="trailing" secondItem="uJb-P0-EVd" secondAttribute="trailing" id="FEI-mg-Thd"/>
                             <constraint firstItem="Vd8-yw-PCf" firstAttribute="top" secondItem="uJb-P0-EVd" secondAttribute="top" id="LEt-iS-iG3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lXL-O6-O1F" appends="YES" id="AgC-sL-qXH"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="5c" selectedImage="3.circle.fill" catalog="system" id="WmL-VI-40p"/>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="cA3-0s-wCl">
-                            <color key="tintColor" systemColor="systemPinkColor"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5D2-8M-xPL"/>
-                        <barButtonItem systemItem="trash" id="fQB-BY-sQo">
-                            <color key="tintColor" systemColor="systemPinkColor"/>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addNameButton" destination="fQB-BY-sQo" id="clD-Z6-bzg"/>
-                        <outlet property="deleteNameButton" destination="cA3-0s-wCl" id="t6h-SW-2rM"/>
                         <outlet property="namesTableView" destination="Vd8-yw-PCf" id="hhw-k0-f1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNz-KV-QQP" sceneMemberID="firstResponder"/>
+                <gestureRecognizer id="lXL-O6-O1F"/>
             </objects>
             <point key="canvasLocation" x="1653.6231884057972" y="347.54464285714283"/>
         </scene>
