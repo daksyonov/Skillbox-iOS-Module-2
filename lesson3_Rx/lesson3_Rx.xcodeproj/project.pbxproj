@@ -15,6 +15,8 @@
 		3F0BDE5B27C577A400B05FA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BDE5A27C577A400B05FA8 /* LoginViewController.swift */; };
 		3F22B35027B9B2070081FD30 /* AnimatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B34F27B9B2070081FD30 /* AnimatableProtocol.swift */; };
 		3F22B35227B9B68D0081FD30 /* UIViewTransformationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B35127B9B68D0081FD30 /* UIViewTransformationProtocol.swift */; };
+		3F4FB45327CCA01A00B834A5 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 3F4FB45227CCA01A00B834A5 /* Differentiator */; };
+		3F4FB45527CCA01A00B834A5 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 3F4FB45427CCA01A00B834A5 /* RxDataSources */; };
 		3FB21EAE27B97EAB0060472B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3FB21EAD27B97EAB0060472B /* RxCocoa */; };
 		3FB21EB027B97EAB0060472B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3FB21EAF27B97EAB0060472B /* RxSwift */; };
 		3FB21EB227B98B2D0060472B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB21EB127B98B2D0060472B /* SearchViewController.swift */; };
@@ -67,6 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB21EB027B97EAB0060472B /* RxSwift in Frameworks */,
+				3F4FB45527CCA01A00B834A5 /* RxDataSources in Frameworks */,
+				3F4FB45327CCA01A00B834A5 /* Differentiator in Frameworks */,
 				3FB21EAE27B97EAB0060472B /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +172,8 @@
 			packageProductDependencies = (
 				3FB21EAD27B97EAB0060472B /* RxCocoa */,
 				3FB21EAF27B97EAB0060472B /* RxSwift */,
+				3F4FB45227CCA01A00B834A5 /* Differentiator */,
+				3F4FB45427CCA01A00B834A5 /* RxDataSources */,
 			);
 			productName = lesson3_Rx;
 			productReference = 3F0748B827B97729001BBADA /* lesson3_Rx.app */;
@@ -200,6 +206,7 @@
 			mainGroup = 3F0748AF27B97729001BBADA;
 			packageReferences = (
 				3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3F4FB45127CCA01A00B834A5 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 3F0748B927B97729001BBADA /* Products */;
 			projectDirPath = "";
@@ -457,6 +464,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3F4FB45127CCA01A00B834A5 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -468,6 +483,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3F4FB45227CCA01A00B834A5 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F4FB45127CCA01A00B834A5 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		3F4FB45427CCA01A00B834A5 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F4FB45127CCA01A00B834A5 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		3FB21EAD27B97EAB0060472B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3FB21EAC27B97EAB0060472B /* XCRemoteSwiftPackageReference "RxSwift" */;
