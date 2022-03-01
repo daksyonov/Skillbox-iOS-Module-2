@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 // MARK: - VC
 
@@ -13,12 +16,13 @@ final class NamesViewController: UIViewController {
 
 	// MARK: Properties & Lifecycle
 
-	@IBOutlet weak var namesTableView: UITableView!
+	@IBOutlet private weak var namesTableView: UITableView!
+
+	private var disposeBag = DisposeBag()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		namesTableView.delegate = self
-		namesTableView.dataSource = self
+
 		namesTableView.register(
 			UITableViewCell.self,
 			forCellReuseIdentifier: "cell"
@@ -61,29 +65,3 @@ extension NamesViewController {
 
 	}
 }
-
-
-extension NamesViewController: UITableViewDataSource {
-
-	func numberOfSections(in tableView: UITableView) -> Int {
-		1
-	}
-
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		10
-	}
-
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell.init(
-			style: .subtitle,
-			reuseIdentifier: "cell"
-		)
-
-		cell.textLabel?.text = "aga"
-		cell.detailTextLabel?.text = "fasfd"
-
-		return cell
-	}
-}
-
-extension NamesViewController: UITableViewDelegate { }

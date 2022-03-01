@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: - Delete if not needed
+
 final class TabBarController: UITabBarController {
 
 	override func viewDidLoad() {
